@@ -15,7 +15,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
     
-    - name: Build and push Docker image
+    - name: Build
       uses: matootie/github-docker@v3.0.0
       with:
         accessToken: ${{secrtes.fastapi}}

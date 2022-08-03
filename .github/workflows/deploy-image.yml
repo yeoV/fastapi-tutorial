@@ -31,4 +31,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{env.REGISTRY}}/yeov/fastapi-tutorial:latest
+        tags: ${{env.REGISTRY}}/yeov/fastapi-tutorial:1.0

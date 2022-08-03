@@ -4,8 +4,12 @@ on:
     branches:
       main
 
+env:
+  REGISTRY: ghrc.io
+  IMAGE_NAME: ${{ github.repository }}
+
 jobs:
-  build:
+  build-and-push-image:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -14,10 +18,17 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    
-    - name: Build
-      uses: matootie/github-docker@v3.0.0
+
+    - name: Login to Container registry
+      uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
       with:
-        accessToken: ${{secrtes.fastapi}}
-        tags: latest
-        imageName: ${{ github.repository}}
+        registry: ${{env.REGISTRY}}
+        username: ${{ github.actor }}
+        password: ${{ secrets.fastapi }}
+    
+    - name: Build and push Docker image
+      uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+      with:
+        context: .
+        push: true
+        tags: ${{env.REGISTRY}}/yeov/fastapi-tutorial:latest

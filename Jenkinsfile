@@ -15,7 +15,7 @@ pipeline{
         stage('Build and Push Docker Image'){
             steps{
                 script{
-                    def dockerImage docker.build("fast-api:latest")
+                    dockerImage = docker.build("fast-api:latest")
 
                     dockerImage.push()
 

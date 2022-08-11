@@ -1,5 +1,5 @@
 pipeline{
-    agent any
+    agent { node {label docker-agent}}
 
     stages{
         stage('Code checkout'){
@@ -13,6 +13,7 @@ pipeline{
         stage('Build and Push Docker Image'){
             steps{
                 script{
+                    sh 'ls'
                     dockerImage = docker.build("fast-api:latest")
 
                     dockerImage.push()

@@ -1,5 +1,10 @@
 pipeline{
-    agent { node {label docker-agent}}
+    agent {
+      kubernetes {
+        cloud 'kubernetes'
+        inheritFrom 'docker'
+  }
+}
 
     stages{
         stage('Code checkout'){

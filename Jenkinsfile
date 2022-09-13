@@ -1,5 +1,10 @@
 pipeline{
-    agent any
+    agent {
+      kubernetes {
+        cloud 'kubernetes'
+        inheritFrom 'docker'
+  }
+}
 
     stages{
         stage('Code checkout'){
@@ -13,6 +18,7 @@ pipeline{
         stage('Build and Push Docker Image'){
             steps{
                 script{
+                    sh 'ls'
                     dockerImage = docker.build("fast-api:latest")
 
                     dockerImage.push()

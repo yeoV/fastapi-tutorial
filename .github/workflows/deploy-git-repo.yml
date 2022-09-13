@@ -1,4 +1,4 @@
-name: Build and Push Docker images
+name: Build and Push Git-Repo
 on:
   push:
     branches:

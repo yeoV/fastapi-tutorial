@@ -15,8 +15,8 @@ jobs:
       - name: Install dependencies
         run: yarn install --production=false
       - name: Scan code
-        uses: vtex/action-sonarqube@main
-        env:
+        uses: kitabisa/sonarqube-action@master
+        with:
+          host: ${{ secrets.SONAR_HOST_URL }}
+          login: ${{ secrets.SONAR_TOKEN }}
           githubToken: ${{ secrets.FASTAPI }} # https://docs.github.com/en/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}

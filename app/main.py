@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from .book import Book
+from book import Book
 
 app = FastAPI()
 

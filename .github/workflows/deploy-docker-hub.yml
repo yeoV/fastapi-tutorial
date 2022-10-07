@@ -5,7 +5,6 @@ on:
       main
 
 env:
-  REGISTRY: ghrc.io
   IMAGE_NAME: tjdduq97/fastapi:1.0
 
 jobs:

@@ -52,3 +52,16 @@ $ uvicorn main:app --reload
 
 **Swagger Docs**
 - http://localhost:8000/docs
+
+
+
+## Docker Image
+- github repo
+```
+$ docker pull ghcr.io/yeov/fastapi-tutorial:1.1
+```
+
+- docker hub
+```
+$ docker pull tjdduq97/fastapi:1.0
+```

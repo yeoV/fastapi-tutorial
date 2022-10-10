@@ -3,16 +3,15 @@
 - ASGI (Asynchronous Server Gateway Interface)
 - Rest API
 
-
 **Pros**
 - high performance
 - supports asynchronous (concurrency)
 - inbuilt documentation support
 
-
 **Cons**
 - Lack security System
 - small community
+
 
 ## Local Install
 
@@ -29,7 +28,7 @@ $ pipenv install
 ```
 
 
-## fastapi Installation 
+### fastapi Installation (raw) 
 - Python 3.7+
 - MacOS
 
@@ -43,8 +42,16 @@ $ pip install "uvicorn[standard]
 ```
 
 
+### Run
+```
+$ cd app
+```
+- using pipenv
+```
+pipenv run uvicorn main:app --reload
+```
 
-## Run
+- using pip
 ```
 $ uvicorn main:app --reload
 ```
@@ -54,7 +61,6 @@ $ uvicorn main:app --reload
 
 **Swagger Docs**
 - http://localhost:8000/docs
-
 
 
 ## Docker Image
